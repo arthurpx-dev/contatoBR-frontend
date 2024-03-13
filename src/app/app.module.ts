@@ -3,16 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIcon } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatIcon,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
